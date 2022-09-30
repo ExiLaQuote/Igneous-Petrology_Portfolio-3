@@ -1,1 +1,1 @@
-# Igneous-Petrology_Portfolio-3
+# Igneous Petrology | Portfolio 3

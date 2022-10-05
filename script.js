@@ -2,21 +2,20 @@
 document.querySelector("#fakeBody").scrollTo({top: window.innerHeight*2})
 
 // Shake Function
-let shakeTimes = 0, stopShake = false;
+let shakeTimes = 0;
 function eruption() {
   if (shakeTimes>=0&&shakeTimes<5){shake(); shakeTimes += 1;}
   function shake() {
-    if (stopShake == false){
-      for (let i=0, k=50; i<4; i++){
-        let fakeStyle = document.querySelector("#fakeBody").style;
-        setTimeout(() => {fakeStyle.transform = "translate(2vw, 0vh)";
-          setTimeout(() => {fakeStyle.transform = "translate(-20vw, 1vh)";
-            setTimeout(() => {fakeStyle.transform = "translate(15vw, 0vh)";
-              setTimeout(() => {fakeStyle.transform = "translate(-8vw, 1vh)";
-                setTimeout(() => {fakeStyle.transform = "translate(0vw, 0vh)";        
-        }, k*i)}, k*i)}, k*i)}, k*i)}, k*i)
-      }
+    for (let i=0, k=50; i<4; i++){
+      let fakeStyle = document.querySelector("#fakeBody").style;
+      setTimeout(() => {fakeStyle.transform = "translate(2vw, 0vh)";
+        setTimeout(() => {fakeStyle.transform = "translate(-20vw, 1vh)";
+          setTimeout(() => {fakeStyle.transform = "translate(15vw, 0vh)";
+            setTimeout(() => {fakeStyle.transform = "translate(-8vw, 1vh)";
+              setTimeout(() => {fakeStyle.transform = "translate(0vw, 0vh)";        
+      }, k*i)}, k*i)}, k*i)}, k*i)}, k*i)
     }
+  
   }
 
   // Eruption Animation
@@ -44,7 +43,6 @@ function eruption() {
             setTimeout(() => {
               volBtn.backgroundColor = "rgb(235, 113, 61)"; volBtn.border = "1vw solid rgb(25, 25, 25)";
               document.querySelector("#volBtn").addEventListener("mouseover", () => {volBtn.backgroundColor = "white";})
-              stopShake = true;
             }, 2500);
           }, 1000);
         }, 2000) 
